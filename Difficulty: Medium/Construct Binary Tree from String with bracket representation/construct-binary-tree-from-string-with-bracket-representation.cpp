@@ -51,7 +51,7 @@ public:
 class Solution{
 public:
     // function to construct tree from string
-    Node *tree(string &str,int &start){
+   Node *tree(string &str,int &start){
         if(start > str.length()){
             return nullptr;
         }
