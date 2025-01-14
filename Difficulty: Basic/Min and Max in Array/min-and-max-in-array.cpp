@@ -9,19 +9,22 @@ using namespace std;
 class Solution {
   public:
     pair<int, int> getMinMax(vector<int> arr) {
-         int minElement = INT_MAX; 
-         int maxElement = INT_MIN; 
-
-         for (int num : arr) {
-        if (num < minElement) {
-            minElement = num; 
+        pair<int,int> ans;
+        int min = arr[0];
+        int max = arr[0];
+        
+        for(int i = 1; i < arr.size() ; i++){
+            if(min > arr[i]){
+                min = arr[i];
+            }
+            if(max < arr[i]){
+                max = arr[i];
+            }
         }
-        if (num > maxElement) {
-            maxElement = num;
-        }
-    }
-
-    return {minElement, maxElement};
+        ans.first = min;
+        ans.second = max;
+        
+        return ans;
     }
 };
 
